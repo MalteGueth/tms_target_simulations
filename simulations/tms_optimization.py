@@ -21,7 +21,7 @@ tms_opt.fnamecoil = 'Magstim_70mm_Fig8.nii.gz'
 # Select a target for the optimization
 tms_opt.target = [28, -77.3, 66.4]
 # If you set the solver to 'pardiso',
-# you run a more memory efficient version of the optimization
+# you run a faster and more memory efficient version of the optimization
 tms_opt.solver_options = 'pardiso'
 # Set the maximum of the range of angles to include into the optimization search
 tms_opt.search_angle = 360
