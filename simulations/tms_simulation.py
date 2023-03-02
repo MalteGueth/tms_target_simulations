@@ -7,7 +7,7 @@ from simnibs import sim_struct, run_simnibs
 # or the position of the coil.
 
 # Set your root directory
-path = 'C:\\Users\\Malte\\SimNIBS-3.2\\simnibs_examples\\ernie\\'
+path = 'D:\\lab_meetings\\simnibs_workshop\\simnibs_examples\\ernie\\'
 # Initialize a session
 s = sim_struct.SESSION()
 # Index the mesh file you would like to use for the simulation
