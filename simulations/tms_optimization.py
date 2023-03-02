@@ -7,30 +7,43 @@ from simnibs import opt_struct
 # to maximize the electric field strength at this target by running a series of simulations
 
 # Set your root directory
-path = 'C:\\Users\\Malte\\SimNIBS-3.2\\'
+path = 'D:\\lab_meetings\\simnibs_workshop\\simnibs_examples\\ernie\\'
 
 # Initialize the optimization structure
 tms_opt = opt_struct.TMSoptimize()
+
+# Supply the input file paths and output directory
 # Index the mesh file you would like to use for the optimization
-tms_opt.fnamehead = path + 'simnibs_examples\\ernie\\ernie.msh'
+tms_opt.fnamehead = path + 'ernie.msh'
 # Select the folder you would like to store the results in
 # This needs to be an empty folder
 tms_opt.pathfem = path + 'optimization'
 # Set the coil name that you would like to use for the optimization
 tms_opt.fnamecoil = 'Magstim_70mm_Fig8.nii.gz'
+
+# Determine the initial coil placement
 # Select a target for the optimization
-tms_opt.target = [28, -77.3, 66.4]
-# If you set the solver to 'pardiso',
-# you run a faster and more memory efficient version of the optimization
-tms_opt.solver_options = 'pardiso'
-# Set the maximum of the range of angles to include into the optimization search
-tms_opt.search_angle = 360
+tms_opt.target = [36, -76, 50]
+# For selecting the initial coil angle before iterating through different positions
+# set the orientation of the y-axis like before (pointing at CPz)
+tms_opt.pos_ydir = [-5, -29, 68]
+# Set distance
+tms_opt.distance = 10.0
+
+# Set the search parameters
+# Set the maximum angle to include into the analysis
+tms_opt.search_angle = 140
 # Set the size of angle increments
 tms_opt.angle_resolution = 15
+# Set the a search radius in mm allowing the center of the coil to move in
+tms_opt.search_radius = 10
 # Set the radius drawn around the target in mm
 tms_opt.target_size = 5
-# Set the distance of the coil to the head surface in mm
-tms_opt.distance = 10
+
+# Choose a solver algorithm
+# If you set the solver to 'pardiso',
+# you run a more memory efficient version of the optimization
+tms_opt.solver_options = 'pardiso'
 
 # Run the optimization
 tms_opt.run()
