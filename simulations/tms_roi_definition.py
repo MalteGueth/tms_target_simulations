@@ -13,7 +13,7 @@ folder = 'simulation'
 # Set the coil name that you used in the simulation
 coil = 'Magstim_70mm_Fig8'
 # Create the name of the results .msh file
-result_file = subject + '_TMS_1-0001_' + coil + '_scalar.msh'
+result_file = subject + '_TMS_1-0001_' + coil + '_nii_scalar.msh'
 # Create the complete directory including the results file you want to load
 # In this case this directory is:
 # 'C:\\Users\\Malte\\SimNIBS-3.2\\simnibs_examples\\ernie\\simnibs_simulation\\ernie_TMS_1-0001_Magstim_70mm_Fig8_scalar.msh'
