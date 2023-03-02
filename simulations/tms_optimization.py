@@ -40,6 +40,11 @@ tms_opt.search_radius = 10
 # Set the radius drawn around the target in mm
 tms_opt.target_size = 5
 
+# The default is to first show this ROI and search parameters in gmsh
+# before running the simulation
+# Change this parameters to False if you would like to skip this visualization 
+tms_opt.open_in_gmsh = True
+
 # Choose a solver algorithm
 # If you set the solver to 'pardiso',
 # you run a more memory efficient version of the optimization
