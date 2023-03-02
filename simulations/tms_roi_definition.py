@@ -5,11 +5,11 @@ import simnibs
 ## Set pre-loop variables and plot the ROI
 
 # Set the base path to your simnibs installation
-path = 'C:\\Users\\Malte\\SimNIBS-3.2'
+path = 'D:\\lab_meetings\\simnibs_workshop\\simnibs_examples\\'
 # Set the name of the subject
 subject = 'ernie'
 # Set the folder within the simnibs path where you saved your simulation results
-folder = 'simnibs_examples\\ernie\\simulation'
+folder = 'simulation'
 # Set the coil name that you used in the simulation
 coil = 'Magstim_70mm_Fig8'
 # Create the name of the results .msh file
@@ -30,7 +30,7 @@ gray_matter = head_mesh.crop_mesh(2)
 # Use the coordinates for the targeted gyrus in native space
 # This is normally supplied by the anatomical analysis
 # In this case I provide the coordinates I have chosen from the example subject
-sub_coords = [32, -92, 73]
+sub_coords = [36, -76, 50]
 
 # Set the radius of the ROI sphere in mm
 r = 5.
