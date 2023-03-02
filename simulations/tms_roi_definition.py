@@ -19,10 +19,6 @@ result_file = subject + '_TMS_1-0001_' + coil + '_scalar.msh'
 # 'C:\\Users\\Malte\\SimNIBS-3.2\\simnibs_examples\\ernie\\simnibs_simulation\\ernie_TMS_1-0001_Magstim_70mm_Fig8_scalar.msh'
 results_dir = os.path.join(path, folder, result_file)
 
-# Set the number of simulations you would like to compare (counter in the file name after "_TMS_")
-# We have this at two for the comparison of 30 vs. 90 degrees
-nrSim = 2
-
 # Load in the simulation result from the .msh file
 head_mesh = simnibs.read_msh(results_dir)
 
