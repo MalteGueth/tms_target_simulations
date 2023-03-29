@@ -47,7 +47,7 @@ tms_opt.open_in_gmsh = True
 
 # Choose a solver algorithm
 # If you set the solver to 'pardiso',
-# you run a more memory efficient version of the optimization
+# the simulations will run faster but with a higher memory usage
 tms_opt.solver_options = 'pardiso'
 
 # Run the optimization
