@@ -16,27 +16,31 @@ tms_opt = opt_struct.TMSoptimize()
 # Index the mesh file you would like to use for the optimization
 tms_opt.fnamehead = path + 'ernie.msh'
 # Select the folder you would like to store the results in
-# This needs to be an empty folder
-tms_opt.pathfem = path + 'optimization'
+# If this folder does not exist yet, it will be created
+# If it already exists, it needs to be empty
+tms_opt.pathfem = path + 'm2m_ernie/optimization'
 # Set the coil name that you would like to use for the optimization
-tms_opt.fnamecoil = 'Magstim_70mm_Fig8.nii.gz'
+# The file needs to exist in the simnibs_env directory \simnibs_env\Lib\site-packages\simnibs\ccd-files
+tms_opt.fnamecoil = 'No29_MagVenture_C-B60_Fig8.nii.gz'
 
 # Determine the initial coil placement
-# Select a target for the optimization
+# Select a target for the optimization in native space
 tms_opt.target = [36, -76, 50]
 # For selecting the initial coil angle before iterating through different positions
-# set the orientation of the y-axis like before (pointing at CPz)
+# set the orientation of the y-axis like before (here, pointing at CPz)
 tms_opt.pos_ydir = [-5, -29, 68]
-# Set distance
+# Set distance in mm
 tms_opt.distance = 10.0
 
 # Set the search parameters
 # Set the maximum angle to include into the analysis
-tms_opt.search_angle = 140
+tms_opt.search_angle = 150
 # Set the size of angle increments
 tms_opt.angle_resolution = 15
 # Set the a search radius in mm allowing the center of the coil to move in
-tms_opt.search_radius = 10
+# 5 mm will result in a single position in the target center
+# and the optimization will only compare different angles
+tms_opt.search_radius = 5
 # Set the radius drawn around the target in mm
 tms_opt.target_size = 5
 
